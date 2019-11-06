@@ -11,7 +11,7 @@ var hourSlot = $(".hour").data("value")
 // for changing color based on current time
 $(".hour").each( (key, element) => {
      var nowHour = moment().format("HH");
-     var timeSlot = $(element).attr('data-value');
+     var timeSlot = parseInt($(element).attr('data-value'));
 
      if (nowHour < timeSlot) {
          $(element).siblings("textarea:first").css({"background-color": "gray"})
@@ -21,11 +21,13 @@ $(".hour").each( (key, element) => {
          $(element).siblings("textarea:first").css({"background-color": "green"})
      } 
      
-     if (nowHour === timeSlot) {
+     if (nowHour == timeSlot) {
          $(element).siblings("textarea:first").css({"background-color": "red"})
      }
     
  });
+
+
 
 var text9Array = [];
 var text10Array = [];
